@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true #to know what query statement runs in the background
+    properties:
+      hibernate:
+        format_sql: true #to understand in better format
+
+  datasource:
+    username: postgres
+    password: Babonproduction
+    url: jdbc:postgresql://localhost:5432/graphql_db
+    driver-class-name: org.postgresql.Driver
+
+  graphql:
+    graphiql: # this is needed to use the tool of graphql API
+      enabled: true

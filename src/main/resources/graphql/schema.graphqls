@@ -1,0 +1,34 @@
+#CREATE SCHEMA FOR MOVIE
+type Movie {
+    id: ID!
+    title: String!
+    director: String!
+    studio: String!
+    releaseYear: Int!
+    movieCast:[String]!
+}
+
+#FOR INPUT OF MOVIE DATA
+input MovieModel {
+    title: String!
+    director: String!
+    studio: String!
+    releaseYear: Int!
+    movieCast:[String]!
+}
+
+
+type Mutation {
+    createMovie(movieModel: MovieModel): Movie,
+    updateMovie(id:ID!, movieModel:MovieModel): Movie,
+    deleteMovie(id:ID!): String
+}
+
+type Query{
+    fetchAllMovies: [Movie],
+    fetchMovieById(id: ID!):Movie
+}
+type GraphQLError {
+    message: String
+}
+
